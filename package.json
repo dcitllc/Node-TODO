@@ -1,0 +1,13 @@
+{
+  "name": "NodeToDo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.7"
+  },
+  "scripts": {
+    "server": "nodemon index.js"
+  }
+}
