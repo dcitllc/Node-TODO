@@ -5,12 +5,16 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "knex": "^0.15.2",
     "nodemon": "^1.18.7",
     "pg": "^7.7.1"
   },
   "scripts": {
-    "server": "nodemon index.js"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "yarn --cwd client start",
+    "dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\""
   }
 }

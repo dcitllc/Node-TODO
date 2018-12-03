@@ -33,4 +33,22 @@ router.put("/:id", (req, res) => {
     });
 });
 
+router.delete("/:id", (req, res) => {
+  db("todo")
+    .where({ id: req.params.id })
+    .del()
+    .then(() => {
+      res.json({ success: true });
+    });
+});
+
+router.get("/:id", (req, res) => {
+  db("todo")
+    .where({ id: req.params.id })
+    .select()
+    .then(data => {
+      res.send(data);
+    });
+});
+
 module.exports = router;

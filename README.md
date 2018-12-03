@@ -7,3 +7,5 @@ Creating a TODO App with Node Knex and Express
 - Knex
 - Postgres
 - Body Parser
+- React
+- Concurrently
