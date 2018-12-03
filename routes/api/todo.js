@@ -11,4 +11,15 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/", (req, res) => {
+  // INSERT INTO tablename(column1, column2) VALUES(column1_value, column2_value)
+  // Then we are returning SELECT * FROM table WHERE id = inserted_row
+  db.insert(req.body)
+    .returning("*")
+    .into("todo")
+    .then(data => {
+      res.send(data);
+    });
+});
+
 module.exports = router;
