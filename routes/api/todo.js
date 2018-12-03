@@ -22,4 +22,15 @@ router.post("/", (req, res) => {
     });
 });
 
+router.put("/:id", (req, res) => {
+  // UPDATEing the database/req.body based on id
+  db("todo")
+    .where({ id: req.params.id })
+    .update(req.body)
+    .returning("*")
+    .then(data => {
+      res.send(data);
+    });
+});
+
 module.exports = router;
